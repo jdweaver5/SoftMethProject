@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="drinkSmart.MainActivity"
+    android:id="@+id/newUser1Layout"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="50dp"
+        android:background="@color/colorPrimaryDark">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="40sp"
+            android:textColor="#fff"
+            android:text="USER INFORMATION"
+            android:layout_gravity="center"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <EditText
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_person_outline_black_24dp"
+            android:drawablePadding="10dp"
+            android:id="@+id/inputName"
+            android:hint="NAME" /> <!-- NAME -->
+
+        <EditText
+            android:layout_marginTop="40dp"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            android:id="@+id/inputAge"
+            android:hint="AGE" /> <!-- AGE -->
+
+        <EditText
+            android:layout_marginTop="40dp"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            android:id="@+id/inputHeight"
+            android:hint="HEIGHT" /> <!-- HEIGHT -->
+
+        <EditText
+            android:layout_marginTop="40dp"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            android:id="@+id/inputWeight"
+            android:hint="WEIGHT" /> <!-- WEIGHT -->
+
+        <EditText
+            android:layout_marginTop="40dp"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            android:id="@+id/inputGender"
+            android:imeOptions="actionDone"
+            android:singleLine="true"
+            android:hint="GENDER" /> <!-- GENDER -->
+
+        <Button
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/buttonstyleyellow"
+            android:drawableRight="@drawable/ic_send_black_24dp"
+            android:text="NEXT"
+            android:id="@+id/next" />
+        <Button
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/buttonstyleyellow"
+            android:drawable="@drawable/ic_send_black_24dp"
+            android:text="BACK"
+            android:id="@+id/back"
+            android:textColor="#000" /> <!-- android:onClick="saveContent" -->
+    </LinearLayout>
+</LinearLayout>
