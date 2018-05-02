@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="drinkSmart.existingUser"
+    android:background="@color/colorPrimaryDark">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="19dp"
+        android:text="Status"
+        android:textColor="#fff"
+        android:textSize="40sp"
+        />
+
+    <TextView
+        android:layout_width="142dp"
+        android:layout_height="wrap_content"
+
+        android:layout_above="@+id/bac"
+        android:layout_alignStart="@+id/bac"
+        android:layout_marginBottom="-118dp"
+        android:layout_marginStart="-107dp"
+        android:text="BAC: "
+        android:textColor="#fff"
+        android:textSize="40sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_above="@+id/bac"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="-118dp"
+        android:layout_marginStart="22dp"
+        android:text="Drinks: "
+        android:textColor="#fff"
+        android:textSize="40sp"
+        android:id="@+id/drinksLabel"/>
+
+    <TextView
+        android:id="@+id/drinks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/drinksLabel"
+        android:layout_alignTop="@+id/bac"
+
+        android:textColor="#fff"
+        android:textSize="40sp" />
+
+    <TextView
+        android:id="@+id/bac"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="35dp"
+        android:layout_marginTop="118dp"
+
+        android:textColor="#fff"
+        android:textSize="40sp" />
+
+    <Button
+        android:id="@+id/drink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+
+        android:layout_alignTop="@+id/drink2"
+        android:layout_marginStart="45dp"
+        android:background="@drawable/buttonstyleyellow"
+        android:text="Light Beer"
+        android:textColor="#000" />  <!-- Light Beer -->
+    <Button
+        android:id="@+id/drink1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/drink"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="bottom|left"
+        android:background="@drawable/buttonstyleyellow"
+        android:text="IPA"
+        android:textColor="#000" /> <!-- IPA -->
+    <Button
+        android:id="@+id/drink2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/bac"
+        android:layout_gravity="bottom|left"
+        android:layout_marginTop="211dp"
+        android:background="@drawable/buttonstyleyellow"
+        android:text="Stout"
+        android:textColor="#000" /> <!-- Stout -->
+    <Button
+        android:id="@+id/drink3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/drink"
+        android:layout_gravity="bottom|left"
+        android:layout_marginTop="286dp"
+        android:background="@drawable/buttonstyleyellow"
+        android:text="Red Wine"
+        android:textColor="#000" /> <!-- Red Wine -->
+    <Button
+        android:id="@+id/drink4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/bac"
+        android:layout_alignTop="@+id/drink3"
+        android:layout_gravity="center"
+        android:background="@drawable/buttonstyleyellow"
+        android:text="White Wine"
+        android:textColor="#000" /> <!-- White Wine -->
+    <Button
+        android:id="@+id/drink5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/drink3"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:background="@drawable/buttonstyleyellow"
+        android:text="Rose"
+        android:textColor="#000" /> <!-- Rose -->
+    <Button
+        android:id="@+id/drink6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/drink"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center"
+        android:background="@drawable/buttonstyleyellow"
+        android:text="Champagne"
+        android:textColor="#000" /> <!-- Champagne -->
+    <Button
+        android:id="@+id/drink7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/bac"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center"
+        android:background="@drawable/buttonstyleyellow"
+        android:text="Cider"
+        android:textColor="#000" /> <!-- Cider -->
+    <Button
+        android:id="@+id/drink8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:background="@drawable/buttonstyleyellow"
+        android:text="Smirnoff Ice"
+        android:textColor="#000" /> <!-- Smirnoff Ice -->
+    <Button
+        android:id="@+id/drink9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/drink"
+        android:layout_gravity="center"
+        android:layout_marginBottom="279dp"
+        android:background="@drawable/buttonstyleyellow"
+        android:text="Whiskey"
+        android:textColor="#000" /> <!-- Whiskey -->
+    <Button
+        android:id="@+id/drink10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/drink9"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:background="@drawable/buttonstyleyellow"
+        android:text="Vodka"
+        android:textColor="#000" /> <!-- Vodka -->
+    <Button
+        android:id="@+id/drink11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/drink"
+        android:layout_alignTop="@+id/drink13"
+        android:layout_gravity="center"
+        android:background="@drawable/buttonstyleyellow"
+        android:text="Gin"
+        android:textColor="#000" /> <!-- Gin -->
+    <Button
+        android:id="@+id/drink12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/bac"
+        android:layout_alignTop="@+id/drink9"
+        android:layout_gravity="center"
+        android:background="@drawable/buttonstyleyellow"
+        android:text="Rum"
+        android:textColor="#000" /> <!-- Rum -->
+    <Button
+        android:id="@+id/drink13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginBottom="191dp"
+        android:background="@drawable/buttonstyleyellow"
+        android:text="Tequila"
+        android:textColor="#000" /> <!-- Tequila -->
+    <Button
+        android:id="@+id/drink14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/bac"
+        android:layout_alignTop="@+id/drink11"
+        android:layout_gravity="center"
+        android:background="@drawable/buttonstyleyellow"
+        android:text="Moonshine"
+        android:textColor="#000" /> <!-- Moonshine -->
+    <Button
+        android:id="@+id/drink15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/drink16"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:background="@drawable/buttonstyleyellow"
+        android:text="Malibu"
+        android:textColor="#000" /> <!-- Malibu -->
+    <Button
+        android:id="@+id/drink16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/drink"
+        android:layout_gravity="center"
+        android:layout_marginBottom="112dp"
+        android:background="@drawable/buttonstyleyellow"
+        android:text="Fireball"
+        android:textColor="#000" /> <!-- Fireball -->
+    <Button
+        android:id="@+id/drink17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/bac"
+        android:layout_alignTop="@+id/drink15"
+        android:layout_gravity="center"
+        android:background="@drawable/buttonstyleyellow"
+        android:text="Bombay"
+        android:textColor="#000" /> <!-- Bombay -->
+    <Button
+        android:id="@+id/drink18"
+        android:layout_width="100dp"
+        android:layout_height="75dp"
+        android:layout_alignBottom="@+id/clear"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:background="@drawable/buttonstlecaptm"
+        android:text="Captain Morgan"
+        android:textColor="#000" /> <!-- Captain Morgan -->
+
+    <Button
+        android:id="@+id/home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_column="1"
+        android:layout_marginBottom="26dp"
+        android:layout_row="4"
+        android:background="@drawable/buttonstyleempty"
+        android:text="home"
+        android:textColor="#fff" />  <!-- TEST BUTTON -->
+    <Button
+        android:id="@+id/clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_column="2"
+        android:layout_marginBottom="19dp"
+        android:layout_marginEnd="14dp"
+        android:layout_row="4"
+        android:background="@drawable/buttonstyleyellow"
+        android:text="Clear Profile"
+        android:textColor="#000" />  <!-- TEST BUTTON -->
+
+
+
+</RelativeLayout>
