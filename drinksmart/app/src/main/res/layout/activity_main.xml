@@ -1,94 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blue"
-    tools:context="com.example.vincent488.drinksmart.MainActivity">
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    tools:context="drinkSmart.MainActivity"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="50dp"
+        android:background="@color/colorPrimaryDark">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="40sp"
+            android:textColor="#fff"
+            android:text="Drink Smart"
+            android:layout_gravity="center"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context="com.example.vincent488.drinksmart.MainActivity"
-        tools:layout_editor_absoluteX="41dp"
-        tools:layout_editor_absoluteY="564dp">
-
-        <android.support.constraint.ConstraintLayout
-            android:id="@+id/linearLayout2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="monospace"
-                android:text="Drink Smart"
-                android:textAlignment="center"
-                android:textAllCaps="true"
-                android:textColor="@color/gold"
-                android:textColorHighlight="@color/black"
-                android:textSize="91.6sp"
-                android:textStyle="bold"
-                tools:layout_editor_absoluteX="111dp"
-                tools:layout_editor_absoluteY="654dp" />
-
-            <Button
-                android:id="@+id/button3"
-                android:layout_width="490dp"
-                android:layout_height="184dp"
-                android:background="@drawable/buttonstyle1"
-                android:text="Start"
-                tools:layout_editor_absoluteX="174dp"
-                tools:layout_editor_absoluteY="891dp"
-                tools:textSize="80sp" />
-
-            <ImageView
-                android:id="@+id/imageView8"
-                android:layout_width="560dp"
-                android:layout_height="533dp"
-                app:srcCompat="@mipmap/ic_launcher_foreground"
-                tools:layout_editor_absoluteX="139dp"
-                tools:layout_editor_absoluteY="34dp" />
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="326dp"
-                android:text="Drink Better, Drink Safer, Drink Responsibly"
-                tools:layout_editor_absoluteX="88dp"
-                tools:layout_editor_absoluteY="43dp"
-                tools:text="Drink Better,Drink Safer, Drink Harder"
-                tools:textColor="@color/white"
-                tools:textSize="40sp" />
-
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView"
-                tools:layout_editor_absoluteX="269dp"
-                tools:layout_editor_absoluteY="478dp"
-                tools:text="The Alchol Clock"
-                tools:textColor="@color/white"
-                tools:textSize="40sp" />
-
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView"
-                tools:layout_editor_absoluteX="151dp"
-                tools:layout_editor_absoluteY="542dp"
-                tools:text="That'll Always Have Your Back"
-                tools:textColor="@color/white"
-                tools:textSize="40sp" />
-
-        </android.support.constraint.ConstraintLayout>
-
+        android:orientation="vertical">
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:drawable="@drawable/ic_send_black_24dp"
+            android:background="@drawable/buttonstyleyellow"
+            android:text="START"
+            android:id="@+id/start"
+            android:textColor="#000" /> <!-- LOGIN BUTTON -->
     </LinearLayout>
-
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>
