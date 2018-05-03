@@ -69,10 +69,22 @@ public class newUser extends AppCompatActivity {
                 switch (saveData()) { // store in internal storage
 
                     case 1 : // age not a number
+			Snackbar.make(view, "Age Must Be A Number", Snackbar.LENGTH_INDEFINITE)
+				.setDuration(3000)
+				.setAction("Action", null).show();
+			ageInput.setText("");
                         break;
                     case 2 : // height not a number
+			Snackbar.make(view, "Height Must Be A Number", Snackbar.LENGTH_INDEFINITE)
+				.setDuration(3000)
+				.setAction("Action", null).show();
+			heightInput.setText("");
                         break;
                     case 3 : // weight not a number
+			Snackbar.make(view, "Weight Must Be A Number", Snackbar.LENGTH_INDEFINITE)
+				.setDuration(3000)
+				.setAction("Action", null).show();
+			weightInput.setText("");
                         break;
                     case 4 : // gender not male or female
                         Snackbar.make(view, "To make things simpler, choose:\nMale/male or Female/female", Snackbar.LENGTH_INDEFINITE)
@@ -109,9 +121,18 @@ public class newUser extends AppCompatActivity {
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
         editor.putString(NAME, nameInput.getText().toString());
-        editor.putInt(AGE, toInt(nameInput.getText().toString()));
-        editor.putInt(HEIGHT, toInt(heightInput.getText().toString()));
-        editor.putInt(WEIGHT, toInt(weightInput.getText().toString()));
+	if (nameInput.getText().toString().matches("[0-9]+")
+        	editor.putInt(AGE, toInt(nameInput.getText().toString()));
+	else
+		return 1;
+	if (heightInput.getText().toString().matches("[0-9]+")
+		editor.putInt(HEIGHT, toInt(heightInput.getText().toString()));
+	else
+		return 2;
+        if (weightInput.getText().toString().matches("[0-9]+")
+		editor.putInt(WEIGHT, toInt(weightInput.getText().toString()));
+	else
+		return 3;
         if (genderInput.getText().toString().equals("male") || genderInput.getText().toString().equals("Male") || genderInput.getText().toString().equals("female") || genderInput.getText().toString().equals("Female")) {
             editor.putString(GENDER, genderInput.getText().toString());
         }
