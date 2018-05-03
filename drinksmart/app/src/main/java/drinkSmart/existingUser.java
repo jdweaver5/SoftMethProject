@@ -1,5 +1,7 @@
 package drinkSmart;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
@@ -9,6 +11,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -44,8 +47,8 @@ public class existingUser extends AppCompatActivity {
     // private double timeHours = 0.0;
     public double time = 0.0;
     public double limit = 0.04;
-    public double limitHours = 0.0;
-    public double limitMinutes = 0.0;
+    private double limitHours = 0.0;
+    private double limitMinutes = 0.0;
     private double mainbac = 0.0;
     private int weight;
     private double gender;
@@ -61,6 +64,13 @@ public class existingUser extends AppCompatActivity {
     public static final String GENDER = "Gender";
     public static final String BAC = "Bac";
     public static final String TIME = "Time";
+
+    /*private final Runnable refresh = new Runnable() {
+        @Override
+        public void run() {
+
+        }
+    }*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -157,6 +167,7 @@ public class existingUser extends AppCompatActivity {
                 counter++;
                 drinks1.setText(Integer.toString(counter));
                 saveStats();
+                notification();
             }
         });
         drink3.setOnClickListener(new View.OnClickListener() {
@@ -169,6 +180,7 @@ public class existingUser extends AppCompatActivity {
                 counter++;
                 drinks1.setText(Integer.toString(counter));
                 saveStats();
+                notification();
             }
         });
         drink4.setOnClickListener(new View.OnClickListener() {
@@ -181,6 +193,7 @@ public class existingUser extends AppCompatActivity {
                 counter++;
                 drinks1.setText(Integer.toString(counter));
                 saveStats();
+                notification();
             }
         });
         drink5.setOnClickListener(new View.OnClickListener() { // Rose
@@ -193,6 +206,7 @@ public class existingUser extends AppCompatActivity {
                 counter++;
                 drinks1.setText(Integer.toString(counter));
                 saveStats();
+                notification();
             }
         });
         drink6.setOnClickListener(new View.OnClickListener() { // Champagne
@@ -205,6 +219,7 @@ public class existingUser extends AppCompatActivity {
                 counter++;
                 drinks1.setText(Integer.toString(counter));
                 saveStats();
+                notification();
             }
         });
         drink7.setOnClickListener(new View.OnClickListener() { // Cider
@@ -217,6 +232,7 @@ public class existingUser extends AppCompatActivity {
                 counter++;
                 drinks1.setText(Integer.toString(counter));
                 saveStats();
+                notification();
             }
         });
         drink8.setOnClickListener(new View.OnClickListener() { // Smirnoff
@@ -229,6 +245,7 @@ public class existingUser extends AppCompatActivity {
                 counter++;
                 drinks1.setText(Integer.toString(counter));
                 saveStats();
+                notification();
             }
         });
         drink9.setOnClickListener(new View.OnClickListener() { // Whiskey
@@ -241,6 +258,7 @@ public class existingUser extends AppCompatActivity {
                 counter++;
                 drinks1.setText(Integer.toString(counter));
                 saveStats();
+                notification();
             }
         });
         drink10.setOnClickListener(new View.OnClickListener() { // Vodka
@@ -253,7 +271,7 @@ public class existingUser extends AppCompatActivity {
                 counter++;
                 drinks1.setText(Integer.toString(counter));
                 saveStats();
-
+                notification();
             }
         });
         drink11.setOnClickListener(new View.OnClickListener() { // Gin
@@ -266,7 +284,7 @@ public class existingUser extends AppCompatActivity {
                 counter++;
                 drinks1.setText(Integer.toString(counter));
                 saveStats();
-
+                notification();
             }
         });
         drink12.setOnClickListener(new View.OnClickListener() { // Rum
@@ -279,6 +297,7 @@ public class existingUser extends AppCompatActivity {
                 counter++;
                 drinks1.setText(Integer.toString(counter));
                 saveStats();
+                notification();
             }
         });
         drink13.setOnClickListener(new View.OnClickListener() { // Tequila
@@ -291,6 +310,7 @@ public class existingUser extends AppCompatActivity {
                 counter++;
                 drinks1.setText(Integer.toString(counter));
                 saveStats();
+                notification();
             }
         });
         drink14.setOnClickListener(new View.OnClickListener() { // Moonshine
@@ -303,6 +323,7 @@ public class existingUser extends AppCompatActivity {
                 counter++;
                 drinks1.setText(Integer.toString(counter));
                 saveStats();
+                notification();
             }
         });
         drink15.setOnClickListener(new View.OnClickListener() { // Malibu
@@ -315,6 +336,7 @@ public class existingUser extends AppCompatActivity {
                 counter++;
                 drinks1.setText(Integer.toString(counter));
                 saveStats();
+                notification();
             }
         });
         drink16.setOnClickListener(new View.OnClickListener() { // fireball
@@ -327,6 +349,7 @@ public class existingUser extends AppCompatActivity {
                 counter++;
                 drinks1.setText(Integer.toString(counter));
                 saveStats();
+                notification();
             }
         });
         drink17.setOnClickListener(new View.OnClickListener() { // bombay
@@ -339,6 +362,7 @@ public class existingUser extends AppCompatActivity {
                 counter++;
                 drinks1.setText(Integer.toString(counter));
                 saveStats();
+                notification();
             }
         });
         drink18.setOnClickListener(new View.OnClickListener() {// captain morgan
@@ -351,6 +375,7 @@ public class existingUser extends AppCompatActivity {
                 counter++;
                 drinks1.setText(Integer.toString(counter));
                 saveStats();
+                notification();
             }
         });
     }
@@ -416,4 +441,47 @@ public class existingUser extends AppCompatActivity {
         editor.apply();
 
     }
+
+    public double getLimitHours() {
+        return limitHours;
+    }
+    public double getLimitMinutes() {
+        return limitMinutes;
+    }
+
+    public void notification(){
+
+        //set notification id and text
+        Intent intent = new Intent(existingUser.this, AlarmReceiver.class);
+
+        //getBroadcast
+        PendingIntent alarmIntent = PendingIntent.getBroadcast(existingUser.this,
+                0,intent,PendingIntent.FLAG_CANCEL_CURRENT);
+        AlarmManager alarm = (AlarmManager) getSystemService(ALARM_SERVICE);
+
+
+                long currTime = Calendar.getInstance().getTimeInMillis();
+
+
+                int hours = (int) Math.round(limitHours);
+                int minutes = (int) Math.round(limitMinutes);
+
+
+
+
+                //create time
+                Calendar startTime = Calendar.getInstance();
+                startTime.set(Calendar.HOUR_OF_DAY, hours/2);
+                startTime.set(Calendar.MINUTE, minutes/2);
+                startTime.set(Calendar.SECOND, 0 );
+                long alarmStartTime = startTime.getTimeInMillis();
+
+                //set alarm
+                alarm.set(AlarmManager.RTC_WAKEUP,alarmStartTime,alarmIntent);
+
+                Toast.makeText(this, "Done!", Toast.LENGTH_SHORT).show();
+
+
+
+        }
 }
